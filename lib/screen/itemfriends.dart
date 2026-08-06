@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../models/freiends.dart';
 
@@ -45,29 +46,56 @@ class _FriendState extends State<Friend> {
                 children: [
                   Text(
                     emp[index].name, 
-                    style: const TextStyle(
-                      fontSize: 25, fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 175, 76, 76)),
+                    //style: const TextStyle(
+                      //fontSize: 25, fontWeight: FontWeight.bold,
+                      //color: Color.fromARGB(255, 175, 76, 76)),
+                    style: GoogleFonts.itim(
+                      textStyle: const TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                   Text(
                     "ชื่อเล่น: ${emp[index].nickname}",
-                    style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.bold), 
+                    style: GoogleFonts.itim(
+                          textStyle: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ), 
                   ),
                   Text(
                     "อายุ: ${emp[index].age} ",
-                    style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.bold), 
+                    style: GoogleFonts.itim(
+                          textStyle: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ), 
                   ),
                   Text(
                     "อาหารที่ชอบ: ${emp[index].fevfood} ",
-                    style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.bold), 
+                    style: GoogleFonts.itim(
+                          textStyle: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ), 
                   ),              
                   Text(
                     "เลขที่ชอบ: ${emp[index].fevnumber} ",
-                    style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.bold,), 
+                    style: GoogleFonts.itim(
+                          textStyle: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ), 
                   ),                                                       
                 ],
               ),
