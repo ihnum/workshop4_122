@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:workshop3_122/screen/itemfriends.dart';
-import 'package:workshop3_122/screen/addform.dart';
 //import 'screen/home.dart';
 //import 'screen/item.dart';
 
 
 void main() {
-  runApp(const AddForm());
+  runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
