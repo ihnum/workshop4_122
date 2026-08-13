@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:workshop3_122/screen/addfrom.dart';
 import '../models/foodmenu.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class Item extends StatefulWidget {
   const Item({super.key});
@@ -62,33 +64,42 @@ class _ItemState extends State<Item> {
                         children: [
                           Text(
                             emp[index].name,
-                            style: const TextStyle(
+                            style: GoogleFonts.itim(
+                              textStyle: const TextStyle(
                               fontSize: 25,
                               fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
                             ),
                           ),
 
                           Text(
                             "ประเภทอาหาร: ${emp[index].type}",
-                            style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
+                            style: GoogleFonts.itim(
+                              textStyle: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
 
                           Text(
                             "ส่วนประกอบสำคัญ: ${emp[index].components}",
-                            style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
+                            style: GoogleFonts.itim(
+                              textStyle: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
 
                           Text(
                             "ราคา: ${emp[index].price} บาท",
-                            style: const TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
+                            style: GoogleFonts.itim(
+                              textStyle: const TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
