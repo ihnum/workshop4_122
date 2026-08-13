@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:workshop3_122/screen/addfrom.dart';
 import '../models/foodmenu.dart';
 
 class Item extends StatefulWidget {
@@ -27,56 +27,101 @@ class _ItemState extends State<Item> {
         return Colors.grey[200]!;
     }
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: emp.length,
-      itemBuilder: (context, index) {
-        return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: _getCardColor(emp[index].type),
-          ),
-          margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 3),
-          padding: const EdgeInsets.all(30),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    emp[index].name, 
-                    //style: GoogleFonts.itim(
-                          //textStyle: const TextStyle(
-                          //fontSize: 25,
-                          //fontWeight: FontWeight.bold,
-                          //color: Colors.white,
-                    style: const TextStyle(
-                      fontSize: 25, fontWeight: FontWeight.bold),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('รายการอาหาร'),
+        backgroundColor: Colors.orange,
+        centerTitle: true,
+      ),
+
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: emp.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: _getCardColor(emp[index].type),
                   ),
-                  Text(
-                    "ประเภทอาหาร: ${emp[index].type}",
-                    style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.bold), 
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 2,
+                    horizontal: 3,
                   ),
-                  Text(
-                    "ราคา: ${emp[index].price} บาท",
-                    style: const TextStyle(
-                      fontSize: 25, fontWeight: FontWeight.bold), 
-                  ),           
-                ],
-              ),
-              Image.asset(
-                emp[index].foodpic.image,
-                width: 70,
-                height: 70,
-              ),
-            ],
+                  padding: const EdgeInsets.all(30),
+
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            emp[index].name,
+                            style: const TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+
+                          Text(
+                            "ประเภทอาหาร: ${emp[index].type}",
+                            style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+
+                          Text(
+                            "ส่วนประกอบสำคัญ: ${emp[index].components}",
+                            style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+
+                          Text(
+                            "ราคา: ${emp[index].price} บาท",
+                            style: const TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      Image.asset(
+                        emp[index].foodpic.image,
+                        width: 70,
+                        height: 70,
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
-        );
-      },
+          SizedBox(
+            width: 100,
+            height: 80,
+            child: IconButton(
+              icon: const Icon(
+                Icons.add,
+                size: 40,
+                color: Colors.orange,
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                 MaterialPageRoute(builder: (context) => const Addfrom()));
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

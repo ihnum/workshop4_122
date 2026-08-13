@@ -1,13 +1,26 @@
-enum Foodpic {menu1(image: "assets/images/1.png"),
- menu2(image: "assets/images/2.png"),
- menu3(image: "assets/images/3.png"),
- menu4(image: "assets/images/4.png"),
- menu5(image: "assets/images/5.png"),
- menu6(image: "assets/images/6.png"),
- menu7(image: "assets/images/7.png");
+enum FoodType {
+  tom(ty: 'ต้ม'),
+  pad(ty: 'ผัด'),
+  yang(ty: 'ย่าง'),
+  tod(ty: 'ทอด'),
+  oop(ty: 'อบ'),
+  pak(ty: 'ผัก');
+
+  const FoodType({required this.ty});
+  final String ty;
+}
+
+enum Foodpic {menu1(namefood: "สุกี้", image: "assets/images/1.png"),
+ menu2(namefood: "สลัด", image: "assets/images/2.png"),
+ menu3(namefood: "สเต็กผัก", image: "assets/images/3.png"),
+ menu4(namefood: "สเต็ก", image: "assets/images/4.png"),
+ menu5(namefood: "เบอร์เกอร์", image: "assets/images/5.png"),
+ menu6(namefood: "พิซซ่า", image: "assets/images/6.png"),
+ menu7(namefood: "ราเมง", image: "assets/images/7.png");
  
-  const Foodpic({required this.image});
+  const Foodpic({required this.image, required this.namefood});
   final String image;
+  final String namefood;
 }
 
 class FoodMenu {
@@ -33,14 +46,14 @@ List<FoodMenu> emp = [
     foodpic: Foodpic.menu1,
   ),
   FoodMenu(
-    name: "ผัก",
+    name: "สลัด",
     type: "ผัก",
     components: "แครอท, มะเขือเทศ, บร็อคโคลี่",
     price: 199,
     foodpic: Foodpic.menu2,
   ),
   FoodMenu(
-    name: "สเต็ก",
+    name: "สเต็กผัก",
     type: "ย่าง",
     components: "เนื้อสัตว์, ผัก, ซอส",
     price: 299,
